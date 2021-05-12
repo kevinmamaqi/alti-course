@@ -1,6 +1,6 @@
 import Person from 'assets/img/person.png';
 
-const Collaborators = [
+export const Collaborators = [
 	{
 		img: Person,
 		name: 'Person 1',
@@ -33,4 +33,17 @@ const Collaborators = [
 	},
 ];
 
-export default Collaborators;
+export const CountUpData = [
+	{
+		name: 'Escuelas',
+		number: 46,
+	},
+	{
+		name: 'Talleres',
+		number: 872,
+	},
+	{
+		name: 'Alumnos',
+		number: 1453,
+	},
+];

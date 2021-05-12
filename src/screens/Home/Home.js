@@ -1,10 +1,11 @@
 import React from 'react';
 import Body from 'components/layout/Body/Body';
 import Collaborator from 'components/units/Collaborator/Collaborator';
-import Collaborators from 'utils/data';
+import {Collaborators, CountUpData} from 'utils/data';
 
 // Styles
-import {CollaboratosStyled} from './Home.styles';
+import {CollaboratosStyled, CountUpSection} from './Home.styles';
+import CountUp from 'components/units/CountUp/CountUp';
 
 function Home() {
 	return (
@@ -16,6 +17,11 @@ function Home() {
 					<Collaborator image={c.img} title={c.name} url={c.web} />
 				))}
 			</CollaboratosStyled>
+			<CountUpSection>
+				{CountUpData.map((c) => (
+					<CountUp number={c.number} name={c.name} />
+				))}
+			</CountUpSection>
 		</Body>
 	);
 }
