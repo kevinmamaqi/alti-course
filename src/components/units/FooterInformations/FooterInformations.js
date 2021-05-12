@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 
-function FooterInformations({title, url}) {
+//style
+import {FooterInformationsStyled} from '../FooterInformations/FooterInformations.styles';
+
+function FooterInformations({role}) {
     return (
         <FooterInformationsStyled className="FooterStuff">
-            <h3>Si eres {title}</h3>
+            <h3>Si eres {role}</h3>
         </FooterInformationsStyled>
     );
 }

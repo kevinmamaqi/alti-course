@@ -33,18 +33,6 @@ const Collaborators = [
 	},
 ];
 
-const People = [
-	{
-		role: 'Educador/a o Docente'
-	},
-	{
-		role: 'Alumno'
-	},
-	{
-		role: 'interesada'
-	}
-];
-
 export default Collaborators;
 
-export default People;
+

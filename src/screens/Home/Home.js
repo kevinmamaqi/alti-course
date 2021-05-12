@@ -20,7 +20,7 @@ function Home() {
 			</CollaboratosStyled>
 			<FooterInformationsStyled>
 			{Collaborators.map((r) => (
-					<FooterInformations title={r.role}/>
+					<FooterInformations role={r.role}/>
 				))}
 			</FooterInformationsStyled>
 		</Body>
