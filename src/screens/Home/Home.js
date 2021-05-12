@@ -5,6 +5,8 @@ import Collaborators from 'utils/data';
 
 // Styles
 import {CollaboratosStyled} from './Home.styles';
+import FooterInformations from 'components/units/FooterInformations/FooterInformations';
+import {FooterInformationsStyled} from 'components/units/FooterInformations/FooterInformations.styles';
 
 function Home() {
 	return (
@@ -16,6 +18,11 @@ function Home() {
 					<Collaborator image={c.img} title={c.name} url={c.web} />
 				))}
 			</CollaboratosStyled>
+			<FooterInformationsStyled>
+			{Collaborators.map((r) => (
+					<FooterInformations title={r.role}/>
+				))}
+			</FooterInformationsStyled>
 		</Body>
 	);
 }
