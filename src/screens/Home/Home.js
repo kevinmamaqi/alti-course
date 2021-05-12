@@ -2,6 +2,7 @@ import React from 'react';
 import Body from 'components/layout/Body/Body';
 import Collaborator from 'components/units/Collaborator/Collaborator';
 import Collaborators from 'utils/data';
+import People from 'utils/footerdata';
 
 // Styles
 import {CollaboratosStyled} from './Home.styles';
@@ -19,8 +20,8 @@ function Home() {
 				))}
 			</CollaboratosStyled>
 			<FooterInformationsStyled>
-			{Collaborators.map((r) => (
-					<FooterInformations role={r.role}/>
+				{People.map((r) => (
+					<FooterInformations role={r.role} />
 				))}
 			</FooterInformationsStyled>
 		</Body>
