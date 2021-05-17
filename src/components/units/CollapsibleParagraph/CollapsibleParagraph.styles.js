@@ -29,7 +29,8 @@ export const CollapsibleParagraphStyled = styled.div`
 
 	.text {
 		overflow: hidden;
-		max-height: ${(props) => (props.showText ? '500px' : 0)};
+		max-height: ${(props) =>
+			props.showText ? (props.paragraphHeight ? props.paragraphHeight + 'px' : '100px') : 0};
 		transition: max-height 0.5s ease;
 	}
 `;
