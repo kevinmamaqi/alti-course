@@ -1,11 +1,13 @@
 import React from 'react';
 import Body from 'components/layout/Body/Body';
 import Collaborator from 'components/units/Collaborator/Collaborator';
-import Collaborators from 'utils/data';
+// import Collaborators from 'utils/data';
 import Collapse from 'components/units/Collapse/Collapse';
+import {Collaborators, CountUpData} from 'utils/data';
 
 // Styles
-import {CollaboratosStyled} from './Home.styles';
+import {CollaboratosStyled, CountUpSection} from './Home.styles';
+import CountUp from 'components/units/CountUp/CountUp';
 
 function Home() {
 	return (
@@ -29,6 +31,16 @@ function Home() {
 			/>
 			<Collapse title="titolo2" desc="lorem" />
 			<Collapse title="titolo3" desc="lorem" />
+			<CountUpSection>
+				{CountUpData.map((c) => (
+					<CountUp
+						number={c.number}
+						name={c.name}
+						initialValue={c.initialValue}
+						animationTime={c.animationTime}
+					/>
+				))}
+			</CountUpSection>
 		</Body>
 	);
 }
