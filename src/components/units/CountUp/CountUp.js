@@ -3,28 +3,26 @@ import React, {useState, useEffect} from 'react';
 // Styles
 import {CountUpStyled} from './CountUp.styles';
 
-const initialTime = 0;
-const animationTime = 2000;
-
-function CountUp({number, name}) {
-	const [displayNumber, setDisplayNumber] = useState(initialTime);
+function CountUp({number, name, initialValue, animationTime}) {
+	const [displayNumber, setDisplayNumber] = useState(initialValue);
 
 	useEffect(() => {
 		let start;
-		let counter = 0;
+
 		function step(timestamp) {
 			if (start === undefined) {
 				start = timestamp;
 			}
 			const elapsed = timestamp - start;
-			counter = counter + 1;
-			setDisplayNumber(counter);
+			const iv = initialValue === 0 ? 0 : initialValue / number;
+			const progress = iv + ((1 - iv) * (timestamp - start)) / animationTime;
+			setDisplayNumber(parseInt(progress < 1 ? progress * number : number));
 
-			if (elapsed < 2000) {
+			if (elapsed < animationTime) {
 				// Stop the animation after 2 seconds
-				window.requestAnimationFrame(step);
+				window.requestAnimationFrame(step); // 60hz 1000 / 60 = 16.6777ms
 			} else {
-				console.log(elapsed);
+				window.cancelAnimationFrame(step);
 			}
 		}
 

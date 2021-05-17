@@ -19,7 +19,12 @@ function Home() {
 			</CollaboratosStyled>
 			<CountUpSection>
 				{CountUpData.map((c) => (
-					<CountUp number={c.number} name={c.name} />
+					<CountUp
+						number={c.number}
+						name={c.name}
+						initialValue={c.initialValue}
+						animationTime={c.animationTime}
+					/>
 				))}
 			</CountUpSection>
 		</Body>
