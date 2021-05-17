@@ -1,6 +1,6 @@
 import CollapsibleParagraph from 'components/units/CollapsibleParagraph/CollapsibleParagraph';
 import {FooterColumnStyles, FooterStyles} from './Footer.styles';
-import FooterData from 'utils/footerdata';
+import {FooterData} from 'utils/data';
 import React from 'react';
 
 function Footer() {

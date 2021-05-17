@@ -15,7 +15,7 @@ export const CollaboratosStyled = styled.div`
 	}
 `;
 
-export const CountUpSection = styled.div`
+export const CounterSection = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
