@@ -11,12 +11,17 @@ import CountUp from 'components/units/CountUp/CountUp';
 
 function Home() {
 	return (
-		<Body title="HOME SCREEN">
+		<Body title="Generación No Hunger">
 			<h3>Colaboran con</h3>
 			<h4>Generación No Hunger</h4>
 			<CollaboratosStyled>
-				{Collaborators.map((c) => (
-					<Collaborator image={c.img} title={c.name} url={c.web} />
+				{Collaborators.map((c, idx) => (
+					<Collaborator
+						key={`collaborator-${idx}`}
+						image={c.img}
+						title={c.name}
+						url={c.web}
+					/>
 				))}
 			</CollaboratosStyled>
 
@@ -32,8 +37,9 @@ function Home() {
 			<Collapse title="titolo2" desc="lorem" />
 			<Collapse title="titolo3" desc="lorem" />
 			<CountUpSection>
-				{CountUpData.map((c) => (
+				{CountUpData.map((c, idx) => (
 					<CountUp
+						key={`countup-${idx}`}
 						number={c.number}
 						name={c.name}
 						initialValue={c.initialValue}
