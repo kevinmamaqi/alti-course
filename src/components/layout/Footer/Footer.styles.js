@@ -1,3 +1,6 @@
 import styled from 'styled-components';
 
-export const FooterStyles = styled.div``;
+export const FooterStyled = styled.div`
+display:flex;
+
+`;

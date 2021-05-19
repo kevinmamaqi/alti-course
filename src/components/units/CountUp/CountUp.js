@@ -6,6 +6,8 @@ import {CountUpStyled} from './CountUp.styles';
 function CountUp({number, name, initialValue, animationTime}) {
 	const [displayNumber, setDisplayNumber] = useState(initialValue);
 
+	//IF IN VIEWPORT, FIRE EFFECT
+
 	useEffect(() => {
 		let start;
 
