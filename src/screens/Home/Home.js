@@ -3,13 +3,20 @@ import Body from 'components/layout/Body/Body';
 import Collaborator from 'components/units/Collaborator/Collaborator';
 import Collaborators from 'utils/data';
 import Collapse from 'components/units/Collapse/Collapse';
+import Navigation from 'components/units/Navigation/Navigation';
 
 // Styles
 import {CollaboratosStyled} from './Home.styles';
+import {NavigationStyled} from 'components/units/Navigation/Navigation.styles';
 
 function Home() {
 	return (
 		<Body title="HOME SCREEN">
+			
+			<NavigationStyled>
+				<Navigation></Navigation>
+			</NavigationStyled>
+
 			<h3>Colaboran con</h3>
 			<h4>Generación No Hunger</h4>
 			<CollaboratosStyled>
