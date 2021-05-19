@@ -26,3 +26,6 @@ Why React? It's fast, it's popular, you can use it also to build native and even
 1. useState(). Allows us to control the state of the component. Has two parameters, the state itself and the method to update it.
 2. useEffect(). Allows us to perform side-effects. It has a dependency array that will make it execute each time the parameters change.
 3. useRef(). Allows us to reference a specific DOM element, as accesing it directly from the ID or other DOM properties is not recommended.
+
+## React navigation
+It is necessary to use the library react-router-dom. Easily we can pass to each route a component, manage params and 404 pages. https://reactrouter.com/web
