@@ -9,13 +9,14 @@ export const CollapsibleParagraphStyled = styled.div`
 	.title {
 		position: relative;
 		width: auto;
-		transition: background-color 0.15s ease;
+
 		&:hover {
 			cursor: pointer;
 			&::before {
 				width: calc(100% - 30px);
 			}
 		}
+
 		&::before {
 			content: '';
 			border-bottom: 3px #333 solid;
