@@ -41,4 +41,8 @@ export const menuLinks = [
 		name: 'Contacto',
 		path: 'contacto',
 	},
+	{
+		name: 'Blog',
+		path: 'blog',
+	},
 ];

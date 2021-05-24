@@ -9,12 +9,16 @@ import {Collaborators, CountUpData} from 'utils/data';
 import {CollaboratosStyled, CountUpSection} from './Contact.styles';
 import CountUp from 'components/units/CountUp/CountUp';
 import {useParams} from 'react-router-dom';
+
+// Redux
+import {useSelector} from 'react-redux';
+
 function Contact() {
-	let {id} = useParams();
+	const counterValue = useSelector((state) => state.counter.value);
 
 	return (
-		<Body title="HOME SCREEN">
-			<h3>Contact, id: {id}</h3>
+		<Body title="CL TACT">
+			<h3>Counter value: {counterValue}</h3>
 		</Body>
 	);
 }
