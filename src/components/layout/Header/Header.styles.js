@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 export const HeaderStyled = styled.div`
 	width: 100%;
+
 	.header-container {
 		flex-direction: row;
 		align-items: center;
-		padding-top: 1rem;
-        padding-bottom: 1rem;
+		padding: 1rem 0;
 		justify-content: space-between;
+
 		h1 {
 			font-size: 24px;
 			margin: 0;
@@ -20,9 +21,11 @@ export const HeaderStyled = styled.div`
 				display: inline-block;
 				position: relative;
 				margin-right: 15px;
+
 				&:last-child {
 					margin-right: 0;
 				}
+
 				ul {
 					display: none;
 					position: absolute;

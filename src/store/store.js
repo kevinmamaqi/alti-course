@@ -1,13 +1,22 @@
-const store = {
-	user: {
-		name: 'Mariano',
-		surname: 'Lopez',
-		age: '32',
+import {configureStore} from '@reduxjs/toolkit';
+import counterReducer from './counter.slice';
+import blogReducer from './blog.slice';
+
+const myStore = {
+	counter: {
+		value: 0,
 	},
-	tasks: [
-		{
-			id: 1,
-			name: 'Task 1',
-		},
-	],
+	blog: {
+		articles: [],
+		status: 'INITIAL',
+	},
 };
+
+const store = configureStore({
+	reducer: {
+		counter: counterReducer,
+		blog: blogReducer,
+	},
+});
+
+export default store;

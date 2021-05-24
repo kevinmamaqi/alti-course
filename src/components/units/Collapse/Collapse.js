@@ -23,8 +23,6 @@ function Collapse({title, desc}) {
 		};
 	}, []);
 
-	console.log(counter);
-
 	return (
 		<CollapseStyled
 			pHeight={customPHeight}

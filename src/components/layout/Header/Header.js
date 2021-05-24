@@ -16,7 +16,9 @@ function Header({title}) {
 			</Helmet>
 			<HeaderStyled>
 				<Container className="header-container">
-					<h1>GeneraciónNoHunger</h1>
+					<h1>
+						<Link to="/">GeneraciónNoHunger</Link>
+					</h1>
 					<nav className="menu">
 						<ul>
 							{menuLinks.map((m) => (
