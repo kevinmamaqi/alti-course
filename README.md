@@ -42,4 +42,4 @@ It is necessary to use the library react-router-dom. Easily we can pass to each 
 
 
 ## EXERCISE 2
-Make the CountUp component start when we scroll to it, or in other words, when we see it.
+Make the CountUp component start when we scroll to it, or in other words, when we see it. HINT: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
