@@ -37,19 +37,19 @@ export const CountUpData = [
 	{
 		name: 'Escuelas',
 		number: 46,
-		initialValue: 10,
+		initialValue: 0,
 		animationTime: 2000,
 	},
 	{
 		name: 'Talleres',
 		number: 872,
-		initialValue: 300,
+		initialValue: 0,
 		animationTime: 2000,
 	},
 	{
 		name: 'Alumnos',
 		number: 1453,
-		initialValue: 1000,
+		initialValue: 0,
 		animationTime: 2000,
 	},
 ];
