@@ -9,21 +9,19 @@ function CountUp({number, name, initialValue, animationTime}) {
 
 	useEffect(() => {
 		function checkHeight() {
-			console.log(window.scrollY);
 			if (
+				fireScroll !== true &&
 				window.scrollY >
-				document.getElementById('startEffect').offsetTop - window.innerHeight + 200
+					document.getElementById('startEffect').offsetTop - window.innerHeight + 200
 			) {
-				console.log('Inside IF');
 				setFireScroll(true);
 			}
 		}
-		console.log('ADD EVENT LISTENER');
 		window.addEventListener('scroll', checkHeight);
 		return () => {
 			window.removeEventListener('scroll', checkHeight);
 		};
-	});
+	}, []);
 
 	useEffect(() => {
 		let start;
