@@ -1,13 +1,12 @@
-const store = {
-	user: {
-		name: 'Mariano',
-		surname: 'Lopez',
-		age: '32',
+import {configureStore} from '@reduxjs/toolkit';
+import userReducer from './user.slice';
+import modalReducer from './modal.slice';
+
+const store = configureStore({
+	reducer: {
+		user: userReducer,
+		modal: modalReducer,
 	},
-	tasks: [
-		{
-			id: 1,
-			name: 'Task 1',
-		},
-	],
-};
+});
+
+export default store;

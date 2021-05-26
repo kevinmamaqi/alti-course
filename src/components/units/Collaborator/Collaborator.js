@@ -3,10 +3,10 @@ import React from 'react';
 // Styles
 import {CollaboratorStyled} from './Collaborator.styles';
 
-function Collaborator({image, title, url}) {
+function Collaborator({onClick, image, title, url}) {
 	return (
 		<CollaboratorStyled className="collaborator">
-			<img src={image} alt={title} />
+			<img src={image} alt={title} onClick={onClick} />
 			<h3>{title}</h3>
 			<a href={url}>{url}</a>
 		</CollaboratorStyled>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Body from 'components/layout/Body/Body';
 import Collaborator from 'components/units/Collaborator/Collaborator';
 import {Collaborators, CounterData} from 'utils/data';
@@ -7,8 +7,38 @@ import {Collaborators, CounterData} from 'utils/data';
 import {CollaboratosStyled, CounterSection} from './Home.styles';
 import Counter from 'components/units/Counter/Counter';
 import {Col, Container, GenericContainer, Row} from 'theme/GlobalStyles';
+import Person from 'assets/img/person.png';
+
+// Redux
+import {useSelector, useDispatch} from 'react-redux';
+import {fetchUsers} from 'store/user.slice';
+import {launchModal} from 'store/modal.slice';
 
 function Home() {
+	const dispatch = useDispatch();
+	const users = useSelector((state) => state.user.users);
+	const usersStatus = useSelector((state) => state.user.status);
+
+	useEffect(() => {
+		if (usersStatus !== 'SUCCESS' && usersStatus !== 'PENDING') {
+			dispatch(fetchUsers());
+		}
+	}, [usersStatus]);
+
+	const openUserModal = (userId) => {
+		let user = users.find(({id}) => id === userId);
+		dispatch(
+			launchModal({
+				headerContent: `Username: ${user.username}`,
+				bodyContent: `
+					name: ${user.name},\n
+					email: ${user.email},\n
+					address: ${user.address.street}, ${user.address.city}, ${user.address.zipcode}
+				`,
+			})
+		);
+	};
+
 	return (
 		<Body title="Generación No Hunger">
 			<Container backgroundUrl="https://accionsolidaria.info/wp-content/uploads/2019/04/003-1021x580.png"></Container>
@@ -73,7 +103,7 @@ function Home() {
 			<Container>
 				<h3>Colaboran con</h3>
 				<h4>Generación No Hunger</h4>
-				<CollaboratosStyled>
+				{/* <CollaboratosStyled>
 					{Collaborators.map((c, idx) => (
 						<Collaborator
 							key={`collaborator-${idx}`}
@@ -82,6 +112,21 @@ function Home() {
 							url={c.web}
 						/>
 					))}
+				</CollaboratosStyled> */}
+				<CollaboratosStyled>
+					{usersStatus === 'SUCCESS' ? (
+						users.map((user, idx) => (
+							<Collaborator
+								onClick={() => openUserModal(user.id)}
+								key={`collaborator-${idx}`}
+								image={Person}
+								title={user.name}
+								url={user.website}
+							/>
+						))
+					) : (
+						<p>There are no collaborators yet.</p>
+					)}
 				</CollaboratosStyled>
 			</Container>
 			<Container>
