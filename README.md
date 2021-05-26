@@ -35,7 +35,11 @@ It is necessary to use the library react-router-dom. Easily we can pass to each 
 
 ## State management in React and Redux
 1. The state of our application is the in-memory values at a precise moment.
-2. We can manage state in react with:
-3. useState() hook. It allows us to manage the state of a specific component. https://reactjs.org/docs/hooks-reference.html#usestate
-4. useContext() hook. It allows us to give context to our application and share state between components. https://reactjs.org/docs/hooks-reference.html#usecontext
-5. third party libraries for state management. REDUX is the most used one. https://redux.js.org/
+
+### We can manage state in react with:
+1. useState() hook. It allows us to manage the state of a specific component. https://reactjs.org/docs/hooks-reference.html#usestate
+2. useContext() hook. It allows us to give context to our application and share state between components. https://reactjs.org/docs/hooks-reference.html#usecontext
+3. third party libraries for state management. REDUX is the most used one. https://redux.js.org/
+
+### Redux Exercise
+Substitute "Colaboradores Section" with data coming from https://jsonplaceholder.typicode.com/users. When you click on a user, a modal with the data from the user shows up.
