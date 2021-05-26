@@ -63,7 +63,7 @@ function Home() {
 						title={el.name}
 						username={el.username}
 						email={el.email}
-						website={el.website}						
+						url={el.web}						
 					/>
 				))}
 			</CollaboratosStyled>

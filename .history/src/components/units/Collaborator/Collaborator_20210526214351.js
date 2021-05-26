@@ -11,7 +11,7 @@ function Collaborator({image, title, username, email, website}) {
 		dispatch(
 			launchModal({
 				headerContent: title,
-				bodyContent: email
+				bodyContent: 'How are you?',
 			})
 		);
 	};
@@ -20,7 +20,7 @@ function Collaborator({image, title, username, email, website}) {
 		<CollaboratorStyled className="collaborator">
 			<img src={image} alt={title} onClick={openModal}/>
 			<h3>{title}</h3>
-			<a href={website}>{website}</a>
+			<a href={url}>{url}</a>
 		</CollaboratorStyled>
 	);
 }

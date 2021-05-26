@@ -1,17 +1,15 @@
 import React from 'react';
-//Redux
-import {useSelector, useDispatch} from 'react-redux';
 import {launchModal} from 'store/modal.slice';
 // Styles
 import {CollaboratorStyled} from './Collaborator.styles';
 
-function Collaborator({image, title, username, email, website}) {
+function Collaborator({image, title, url}) {
 	const dispatch = useDispatch();
 	const openModal = () => {
 		dispatch(
 			launchModal({
-				headerContent: title,
-				bodyContent: email
+				headerContent: 'Hi guys',
+				bodyContent: 'How are you?',
 			})
 		);
 	};
@@ -20,7 +18,7 @@ function Collaborator({image, title, username, email, website}) {
 		<CollaboratorStyled className="collaborator">
 			<img src={image} alt={title} onClick={openModal}/>
 			<h3>{title}</h3>
-			<a href={website}>{website}</a>
+			<a href={url}>{url}</a>
 		</CollaboratorStyled>
 	);
 }

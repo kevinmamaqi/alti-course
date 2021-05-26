@@ -11,7 +11,7 @@ function Collaborator({image, title, username, email, website}) {
 		dispatch(
 			launchModal({
 				headerContent: title,
-				bodyContent: email
+				bodyContent: username,email
 			})
 		);
 	};
