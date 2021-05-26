@@ -19,12 +19,21 @@ function Collaborator({image, title, url, email, address, phone, company}) {
 					dispatch(
 						launchModal({
 							headerContent: title,
-							bodyContent: (<ul>
-								<li><FontAwesomeIcon icon="FaEnvelope"/> {email}</li>
-								<li>Phone: {phone}</li>
-								<li>Address: {address.city}</li>
-								<li>Company: {company.name}</li>
-							</ul>),
+							bodyContent: (
+								<button
+									onClick={() =>
+										dispatch(
+											launchModal({
+												headerContent: title,
+												bodyContent: (<ul>
+													<li>{email}</li>
+													<li>{phone}</li>
+													<li>{address.city}</li>
+													<li>{company.name}</li>
+												</ul>),
+											})
+										)
+									}>More Data</button>),
 						})
 					)
 				}

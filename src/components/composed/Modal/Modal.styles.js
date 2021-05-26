@@ -35,5 +35,15 @@ export const ModalStyled = styled.div`
 		z-index: 1000;
 		border-radius: 6px;
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+		padding:20px;
+
+		.header{
+			font-size:20px;
+			font-weight:600;
+		}
+		.body{
+			padding-top:10px;
+		}
 	}
+	
 `;
