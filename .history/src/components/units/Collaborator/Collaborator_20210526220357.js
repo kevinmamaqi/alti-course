@@ -10,14 +10,8 @@ function Collaborator({image, title, username, email, website}) {
 	const openModal = () => {
 		dispatch(
 			launchModal({
-				headerContent: <h3>{title}</h3>,
-				bodyContent: (
-					<ul>
-						<li>{username}</li>
-						<li>{email}</li>
-					</ul>
-				),
-				
+				headerContent: title,
+				bodyContent: email
 			})
 		);
 	};

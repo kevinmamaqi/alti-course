@@ -16,8 +16,7 @@ function Collaborator({image, title, username, email, website}) {
 						<li>{username}</li>
 						<li>{email}</li>
 					</ul>
-				),
-				
+				)
 			})
 		);
 	};

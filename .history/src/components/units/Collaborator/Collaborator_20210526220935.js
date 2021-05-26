@@ -11,12 +11,11 @@ function Collaborator({image, title, username, email, website}) {
 		dispatch(
 			launchModal({
 				headerContent: <h3>{title}</h3>,
-				bodyContent: (
+				bodyContent: 
 					<ul>
 						<li>{username}</li>
 						<li>{email}</li>
 					</ul>
-				),
 				
 			})
 		);
