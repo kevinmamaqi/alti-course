@@ -2,7 +2,6 @@ import {configureStore} from '@reduxjs/toolkit';
 import counterReducer from './counter.slice';
 import blogReducer from './blog.slice';
 import modalReducer from './modal.slice';
-import collaboratorReducer from './collaborator.slice';
 
 const myStore = {
 	counter: {
@@ -17,9 +16,6 @@ const myStore = {
 		headerContent: undefined,
 		bodyContent: undefined,
 	},
-	collaborator: {
-		users: [],
-	},
 };
 
 const store = configureStore({
@@ -27,7 +23,6 @@ const store = configureStore({
 		counter: counterReducer,
 		blog: blogReducer,
 		modal: modalReducer,
-		collaborator: collaboratorReducer,
 	},
 });
 

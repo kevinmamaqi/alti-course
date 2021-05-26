@@ -2,7 +2,6 @@ import {configureStore} from '@reduxjs/toolkit';
 import counterReducer from './counter.slice';
 import blogReducer from './blog.slice';
 import modalReducer from './modal.slice';
-import collaboratorReducer from './collaborator.slice';
 
 const myStore = {
 	counter: {

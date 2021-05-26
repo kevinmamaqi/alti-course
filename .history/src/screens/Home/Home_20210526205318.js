@@ -24,7 +24,6 @@ function Home() {
 	useEffect(() => {
 		if (blogStatus !== 'SUCCESS' && blogStatus !== 'PENDING') {
 			dispatch(fetchArticles());
-			dispatch(fetchUsers());
 		}
 	}, [blogStatus]);
 
@@ -56,12 +55,12 @@ function Home() {
 			<h3>Colaboran con</h3>
 			<h4>Generación No Hunger</h4>
 			<CollaboratosStyled>
-				{users.map((el) => (
+				{users.map((c, idx) => (
 					<Collaborator
-						key={el.id}
-						image={el.img}
-						title={el.name}
-						url={el.web}
+						key={`collaborator-${idx}`}
+						image={c.img}
+						title={c.name}
+						url={c.web}
 					/>
 				))}
 			</CollaboratosStyled>

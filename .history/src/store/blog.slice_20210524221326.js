@@ -31,7 +31,6 @@ export const blogSlice = createSlice({
 		});
 		builder.addCase(fetchArticles.fulfilled, (state, action) => {
 			state.articles = action.payload;
-			state.users = action.payload;
 			state.status = 'SUCCESS';
 		});
 		builder.addCase(fetchArticles.rejected, (state) => {

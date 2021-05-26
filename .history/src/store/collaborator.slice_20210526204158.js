@@ -6,35 +6,33 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 // 3. IT CAN BE AN ERROR
 
 // First, create the thunk
-const url = 'https://jsonplaceholder.typicode.com/posts';
+const url = 'https://jsonplaceholder.typicode.com/users';
 
-export const fetchArticles = createAsyncThunk('blog/fetchArticles', async () => {
+export const fetchUsers = createAsyncThunk('collaborator/fetchUsers', async () => {
 	try {
 		const response = await fetch(url);
-		const articles = await response.json();
-		return articles;
+		const users = await response.json();
+		return users;
 	} catch (error) {
 		console.error(error);
 	}
 });
 
-export const blogSlice = createSlice({
-	name: 'blog',
+export const userSlice = createSlice({
+	name: 'users',
 	initialState: {
-		status: 'INITIAL',
-		articles: [],
+		users: [],
 	},
 	reducers: {},
 	extraReducers: (builder) => {
-		builder.addCase(fetchArticles.pending, (state) => {
+		builder.addCase(fetchUsers.pending, (state) => {
 			state.status = 'PENDING';
 		});
-		builder.addCase(fetchArticles.fulfilled, (state, action) => {
-			state.articles = action.payload;
+		builder.addCase(fetchUsers.fulfilled, (state, action) => {
 			state.users = action.payload;
 			state.status = 'SUCCESS';
 		});
-		builder.addCase(fetchArticles.rejected, (state) => {
+		builder.addCase(fetchUsers.rejected, (state) => {
 			state.status = 'ERROR';
 		});
 	},
@@ -42,4 +40,4 @@ export const blogSlice = createSlice({
 
 // export const {} = blogSlice.actions;
 
-export default blogSlice.reducer;
+export default userSlice.reducer;

@@ -24,7 +24,6 @@ function Home() {
 	useEffect(() => {
 		if (blogStatus !== 'SUCCESS' && blogStatus !== 'PENDING') {
 			dispatch(fetchArticles());
-			dispatch(fetchUsers());
 		}
 	}, [blogStatus]);
 

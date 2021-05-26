@@ -59,7 +59,7 @@ function Home() {
 				{users.map((el) => (
 					<Collaborator
 						key={el.id}
-						image={el.img}
+						image={Collaborators.img}
 						title={el.name}
 						url={el.web}
 					/>
