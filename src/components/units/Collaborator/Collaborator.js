@@ -7,6 +7,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 // Redux
 import {useDispatch} from 'react-redux';
 import {launchModal} from 'store/modal.slice';
+import {faBuilding, faCoffee, faEnvelope, faHome, faPhone} from '@fortawesome/free-solid-svg-icons';
 
 function Collaborator({image, title, url, email, address, phone, company}) {
 	const dispatch = useDispatch();
@@ -26,10 +27,10 @@ function Collaborator({image, title, url, email, address, phone, company}) {
 											launchModal({
 												headerContent: title,
 												bodyContent: (<ul>
-													<li>{email}</li>
-													<li>{phone}</li>
-													<li>{address.city}</li>
-													<li>{company.name}</li>
+													<li><FontAwesomeIcon icon={faEnvelope}/>{email}</li>
+													<li><FontAwesomeIcon icon={faPhone}/>{phone}</li>
+													<li><FontAwesomeIcon icon={faHome}/>{address.city}</li>
+													<li><FontAwesomeIcon icon={faBuilding}/>{company.name}</li>
 												</ul>),
 											})
 										)

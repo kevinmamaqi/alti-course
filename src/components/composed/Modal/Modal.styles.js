@@ -38,11 +38,27 @@ export const ModalStyled = styled.div`
 		padding:20px;
 
 		.header{
-			font-size:20px;
-			font-weight:600;
+			font-size:25px;
+			font-weight:700;
 		}
 		.body{
 			padding-top:10px;
+			ul{
+				list-style:none;
+				padding:0;
+				margin:0;
+				li{
+					display:flex;
+					align-items:center;
+					padding-top:20px;
+					font-size:20px;
+				}
+				svg{
+					width:40px;
+					height:40px;
+					margin-right:10px;
+				}
+			}
 		}
 	}
 	

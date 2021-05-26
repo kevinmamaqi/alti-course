@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import Body from 'components/layout/Body/Body';
 import Collaborator from 'components/units/Collaborator/Collaborator';
 import {Collaborators, CountUpData} from 'utils/data';
-
 // Styles
 import {CollaboratosStyled, CountUpSection} from './Home.styles';
 import CountUp from 'components/units/CountUp/CountUp';
@@ -15,6 +14,7 @@ import {launchModal} from 'store/modal.slice';
 import {fetchUsers} from 'store/collaborators.slice';
 
 import Person from 'assets/img/person.png';
+import {faCoffee} from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
 	const dispatch = useDispatch();
@@ -55,11 +55,6 @@ function Home() {
 	return (
 		<Body title="Generación No Hunger">
 			<Container>
-				<div className="modalButton" style={{paddingTop: 40, paddingBottom: 100}}>
-					<button onClick={openModal}>Open Modal</button>
-					<button onClick={openOtherModal}>Open Other modal</button>
-				</div>
-
 				<h3>Colaboran con</h3>
 				<h4>Generación No Hunger</h4>
 				<CollaboratosStyled>
