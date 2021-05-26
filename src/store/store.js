@@ -1,6 +1,7 @@
 import {configureStore} from '@reduxjs/toolkit';
 import counterReducer from './counter.slice';
 import blogReducer from './blog.slice';
+import modalReducer from './modal.slice';
 
 const myStore = {
 	counter: {
@@ -10,12 +11,18 @@ const myStore = {
 		articles: [],
 		status: 'INITIAL',
 	},
+	modal: {
+		isActive: false,
+		headerContent: undefined,
+		bodyContent: undefined,
+	},
 };
 
 const store = configureStore({
 	reducer: {
 		counter: counterReducer,
 		blog: blogReducer,
+		modal: modalReducer,
 	},
 });
 

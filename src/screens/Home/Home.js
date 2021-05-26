@@ -12,6 +12,7 @@ import CountUp from 'components/units/CountUp/CountUp';
 // Redux
 import {useSelector, useDispatch} from 'react-redux';
 import {fetchArticles} from 'store/blog.slice';
+import {launchModal} from 'store/modal.slice';
 
 function Home() {
 	const dispatch = useDispatch();
@@ -24,9 +25,31 @@ function Home() {
 		}
 	}, [blogStatus]);
 
+	const openModal = () => {
+		dispatch(
+			launchModal({
+				headerContent: 'Hi guys',
+				bodyContent: 'How are you?',
+			})
+		);
+	};
+
+	const openOtherModal = () => {
+		dispatch(
+			launchModal({
+				headerContent: 'Bye guys',
+				bodyContent: "I'm going to code.",
+			})
+		);
+	};
+
 	return (
 		<Body title="Generación No Hunger">
-			<CounterComponent />
+			{/* <CounterComponent /> */}
+			<div className="modalButton" style={{paddingTop: 40, paddingBottom: 100}}>
+				<button onClick={openModal}>Open Modal</button>
+				<button onClick={openOtherModal}>Open Other modal</button>
+			</div>
 			<h3>Colaboran con</h3>
 			<h4>Generación No Hunger</h4>
 			<CollaboratosStyled>
