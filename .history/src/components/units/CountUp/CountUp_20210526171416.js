@@ -6,10 +6,9 @@ import VisibilitySensor from 'react-visibility-sensor';
 // Styles
 import {CountUpStyled} from './CountUp.styles';
 
-
-
-
-	/*
+/*
+function CountUp({number, name, initialValue, animationTime}) {
+	const [displayNumber, setDisplayNumber] = useState(initialValue);
 
 	useEffect(() => {
 		let start;
@@ -20,8 +19,6 @@ import {CountUpStyled} from './CountUp.styles';
 			}
 			const elapsed = timestamp - start;
 			const iv = initialValue === 0 ? 0 : initialValue / number;
-
-			
 			const progress = iv + ((1 - iv) * (timestamp - start)) / animationTime;
 			setDisplayNumber(parseInt(progress < 1 ? progress * number : number));
 
@@ -32,23 +29,16 @@ import {CountUpStyled} from './CountUp.styles';
 				window.cancelAnimationFrame(step);
 			}
 		}
-	
+
 		window.requestAnimationFrame(step);
-		
 	}, []);
 
-	
 
 	return (
-
-	<VisibilitySensor onChange={onChange}>
-
 		<CountUpStyled>
 			<span className="number">{displayNumber}</span>
 			<span className="name">{name}</span>
 		</CountUpStyled>
-
-	</VisibilitySensor>
 	);
 }
 

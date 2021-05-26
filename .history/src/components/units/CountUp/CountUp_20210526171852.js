@@ -1,15 +1,14 @@
 import React, {useState, useEffect} from 'react';
 
-import CountUp, { startAnimation } from 'react-countup';
+//import CountUp, { startAnimation } from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
 
 // Styles
 import {CountUpStyled} from './CountUp.styles';
 
 
-
-
-	/*
+function CountUp({number, name, initialValue, animationTime}) {
+	const [displayNumber, setDisplayNumber] = useState(initialValue);
 
 	useEffect(() => {
 		let start;
@@ -20,8 +19,6 @@ import {CountUpStyled} from './CountUp.styles';
 			}
 			const elapsed = timestamp - start;
 			const iv = initialValue === 0 ? 0 : initialValue / number;
-
-			
 			const progress = iv + ((1 - iv) * (timestamp - start)) / animationTime;
 			setDisplayNumber(parseInt(progress < 1 ? progress * number : number));
 
@@ -32,12 +29,11 @@ import {CountUpStyled} from './CountUp.styles';
 				window.cancelAnimationFrame(step);
 			}
 		}
-	
+
 		window.requestAnimationFrame(step);
-		
 	}, []);
 
-	
+
 
 	return (
 
@@ -52,9 +48,9 @@ import {CountUpStyled} from './CountUp.styles';
 	);
 }
 
-*/
 
 
+/*
 function Counter () {
 
 	var isVisible = "hidden";
@@ -79,6 +75,6 @@ function Counter () {
     );
 };
 
+*/
 
-
-export default Counter;
+export default CountUp;

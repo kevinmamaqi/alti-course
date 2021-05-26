@@ -6,10 +6,9 @@ import VisibilitySensor from 'react-visibility-sensor';
 // Styles
 import {CountUpStyled} from './CountUp.styles';
 
-
-
-
-	/*
+/*
+function CountUp({number, name, initialValue, animationTime}) {
+	const [displayNumber, setDisplayNumber] = useState(initialValue);
 
 	useEffect(() => {
 		let start;
@@ -20,8 +19,6 @@ import {CountUpStyled} from './CountUp.styles';
 			}
 			const elapsed = timestamp - start;
 			const iv = initialValue === 0 ? 0 : initialValue / number;
-
-			
 			const progress = iv + ((1 - iv) * (timestamp - start)) / animationTime;
 			setDisplayNumber(parseInt(progress < 1 ? progress * number : number));
 
@@ -32,30 +29,23 @@ import {CountUpStyled} from './CountUp.styles';
 				window.cancelAnimationFrame(step);
 			}
 		}
-	
+
 		window.requestAnimationFrame(step);
-		
 	}, []);
 
-	
 
 	return (
-
-	<VisibilitySensor onChange={onChange}>
-
 		<CountUpStyled>
 			<span className="number">{displayNumber}</span>
 			<span className="name">{name}</span>
 		</CountUpStyled>
-
-	</VisibilitySensor>
 	);
 }
 
 */
 
 
-function Counter () {
+const Counter = (props) => {
 
 	var isVisible = "hidden";
 	const [viewPortEntered, setViewPortEntered] = useState(false);
@@ -66,13 +56,12 @@ function Counter () {
 		if (isVisible) {
 			setViewPortEntered(true);
 		}
-		console.log(viewPortEntered);
     }
     return (
         <div>
             <VisibilitySensor onChange={onChange}>
                 <div>
-                   <CountUp start={viewPortEntered ? 0 : null} end={100} duration={5} />            
+                   <CountUp start={viewPortEntered ? 0 : null} end={10000} duration={5} />            
                 </div>
             </VisibilitySensor>
         </div>

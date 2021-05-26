@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-import CountUp, { startAnimation } from 'react-countup';
+//import CountUp, { startAnimation } from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
 
 // Styles

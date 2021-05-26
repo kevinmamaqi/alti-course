@@ -1,15 +1,27 @@
 import React, {useState, useEffect} from 'react';
 
-import CountUp, { startAnimation } from 'react-countup';
+//import CountUp, { startAnimation } from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
 
 // Styles
 import {CountUpStyled} from './CountUp.styles';
 
 
+function CountUp({number, name, initialValue, animationTime}) {
+	const [displayNumber, setDisplayNumber] = useState(initialValue);
 
+	var isVisible = "hidden";
+	const [viewPortEntered, setViewPortEntered] = useState(false);
 
-	/*
+	function onChange(isVisible) {
+        console.log('Element is now %s', isVisible ? 'visible' : 'hidden');
+		if (isVisible) {
+			setViewPortEntered(true);
+		}		
+    }
+	console.log(viewPortEntered);
+
+	
 
 	useEffect(() => {
 		let start;
@@ -35,7 +47,7 @@ import {CountUpStyled} from './CountUp.styles';
 	
 		window.requestAnimationFrame(step);
 		
-	}, []);
+	}, [viewPortEntered == true]);
 
 	
 
@@ -52,9 +64,9 @@ import {CountUpStyled} from './CountUp.styles';
 	);
 }
 
-*/
 
 
+/*
 function Counter () {
 
 	var isVisible = "hidden";
@@ -79,6 +91,6 @@ function Counter () {
     );
 };
 
+*/
 
-
-export default Counter;
+export default CountUp;
