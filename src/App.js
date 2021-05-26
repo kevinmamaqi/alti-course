@@ -12,6 +12,7 @@ function App() {
 				<Route exact path="/" component={Home} />
 				<Route exact path="/contacto" component={Contact} />
 				<Route exact path="/blog" component={Blog} />
+				<Route exact path="*" component={Home} />
 			</Switch>
 		</Router>
 	);
