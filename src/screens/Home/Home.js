@@ -11,13 +11,13 @@ import Person from 'assets/img/person.png';
 
 // Redux
 import {useSelector, useDispatch} from 'react-redux';
-import {fetchUsers} from 'store/user.slice';
+import {fetchUsers} from 'store/users.slice';
 import {launchModal} from 'store/modal.slice';
 
 function Home() {
 	const dispatch = useDispatch();
-	const users = useSelector((state) => state.user.users);
-	const usersStatus = useSelector((state) => state.user.status);
+	const users = useSelector((state) => state.users.entities);
+	const usersStatus = useSelector((state) => state.users.status);
 
 	useEffect(() => {
 		if (usersStatus !== 'SUCCESS' && usersStatus !== 'PENDING') {
@@ -30,11 +30,10 @@ function Home() {
 		dispatch(
 			launchModal({
 				headerContent: `Username: ${user.username}`,
-				bodyContent: `
-					name: ${user.name},\n
-					email: ${user.email},\n
-					address: ${user.address.street}, ${user.address.city}, ${user.address.zipcode}
-				`,
+				bodyContent: `name: ${user.name},
+				email: ${user.email},
+				address: ${user.address.street}, ${user.address.city}, ${user.address.zipcode}
+				phone:  ${user.phone}`,
 			})
 		);
 	};

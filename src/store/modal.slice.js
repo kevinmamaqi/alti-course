@@ -3,21 +3,21 @@ import {createSlice} from '@reduxjs/toolkit';
 export const modalSlice = createSlice({
 	name: 'modal',
 	initialState: {
-		isActive: false,
-		headerContent: undefined,
-		bodyContent: undefined,
+		modals: [],
 	},
 	reducers: {
 		launchModal: (state, action) => {
-			console.log(action);
-			state.isActive = true;
-			state.headerContent = action.payload.headerContent;
-			state.bodyContent = action.payload.bodyContent;
+			let modal = {
+				id: state.modals.length,
+				headerContent: action.payload.headerContent,
+				bodyContent: action.payload.bodyContent,
+				isInnerModal: action.payload.isInnerModal,
+			};
+			state.modals.push(modal);
 		},
-		closeModal: (state) => {
-			state.isActive = false;
-			state.headerContent = undefined;
-			state.bodyContent = undefined;
+		closeModal: (state, action) => {
+			//let modal = state.modals.find(({id}) => id === action.payload.id);
+			state.modals.pop();
 		},
 	},
 });

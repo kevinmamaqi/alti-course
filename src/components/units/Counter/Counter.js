@@ -11,6 +11,7 @@ function Counter({number, name, initialValue, animationTime}) {
 	const refElement = useRef(null);
 
 	function isInViewport() {
+		if (!refElement.current) return false;
 		const rect = refElement.current.getBoundingClientRect();
 		return (
 			rect.top >= 0 &&
