@@ -1,5 +1,5 @@
 # React Alten Course
-What is React? It's a **library** to build user interfaces by FB.
+What is React? It's a **library** to build user interfaces created by Facebook.
 Why React? It's fast, it's popular, you can use it also to build native and even desktop apps.
 
 ## What is particular about React?
@@ -31,7 +31,7 @@ Why React? It's fast, it's popular, you can use it also to build native and even
 It is necessary to use the library react-router-dom. Easily we can pass to each route a component, manage params and 404 pages. https://reactrouter.com/web
 
 ## React rendering
-1. Each rendered list using map should have a unique key property in order to allow React.js to identify which element it is. Not using the key property may result in unexpected errors, such as deleting the wrong element and performance issues.
+1. Each rendered list using map should have a unique *key* property in order to allow React.js to identify which element it is. Not using the key property may result in unexpected errors, such as deleting the wrong element and performance issues.
 
 ## State management in React and Redux
 1. The state of our application is the in-memory values at a precise moment.

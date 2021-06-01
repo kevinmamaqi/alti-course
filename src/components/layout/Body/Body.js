@@ -1,4 +1,4 @@
-import Modal from 'components/composed/Modal/Modal';
+import Modals from 'components/composed/Modal/Modals';
 import React from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
@@ -9,7 +9,7 @@ function Body({title, isLoading, children}) {
 			<Header title={title} />
 			{children}
 			<Footer />
-			<Modal />
+			<Modals />
 		</div>
 	);
 }

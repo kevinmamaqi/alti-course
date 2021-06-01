@@ -1,27 +1,32 @@
 import {createSlice} from '@reduxjs/toolkit';
 
+// const modalProperties = {
+// 	isActive: false,
+// 	headerContent: undefined,
+// 	bodyContent: undefined,
+// };
+
+let id = 0;
+const updateId = () => id++;
+
 export const modalSlice = createSlice({
 	name: 'modal',
-	initialState: {
-		isActive: false,
-		headerContent: undefined,
-		bodyContent: undefined,
-	},
+	initialState: [],
 	reducers: {
-		launchModal: (state, action) => {
-			console.log(action);
-			state.isActive = true;
-			state.headerContent = action.payload.headerContent;
-			state.bodyContent = action.payload.bodyContent;
+		addModal: (state, action) => {
+			state.push({
+				id: updateId(),
+				headerContent: action.payload.headerContent,
+				bodyContent: action.payload.bodyContent,
+			});
 		},
-		closeModal: (state) => {
-			state.isActive = false;
-			state.headerContent = undefined;
-			state.bodyContent = undefined;
+		removeModal: (state, action) => {
+			const idx = state.findIndex((modal) => modal.id === action.payload);
+			state.splice(idx, 1);
 		},
 	},
 });
 
-export const {launchModal, closeModal} = modalSlice.actions;
+export const {addModal, removeModal} = modalSlice.actions;
 
 export default modalSlice.reducer;

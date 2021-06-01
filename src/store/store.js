@@ -11,11 +11,7 @@ const myStore = {
 		articles: [],
 		status: 'INITIAL',
 	},
-	modal: {
-		isActive: false,
-		headerContent: undefined,
-		bodyContent: undefined,
-	},
+	modals: [],
 };
 
 const store = configureStore({
@@ -24,6 +20,7 @@ const store = configureStore({
 		blog: blogReducer,
 		modal: modalReducer,
 	},
+	middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck: false}),
 });
 
 export default store;

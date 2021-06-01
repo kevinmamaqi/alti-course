@@ -13,7 +13,6 @@ function Collapse({title, desc}) {
 		}
 		function resizeHeight() {
 			setCounter(counter + 1);
-			console.log(pHeight.current.scrollHeight);
 			setCustomPHeight(pHeight.current.scrollHeight);
 		}
 		window.addEventListener('resize', resizeHeight);
